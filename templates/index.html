@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block content %}
+    <div class="main">
+        <h1>登録情報閲覧</h1>
+        {% for member in dblist %}
+            <p>{{ member.name }}：{{ member.email }}（{{ member.birthday }}）</p>
+        {% endfor %}
+    </div>
+{% endblock %}

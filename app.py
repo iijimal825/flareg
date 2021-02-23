@@ -1,52 +1,65 @@
-from flask import Flask, render_template, url_for, request, redirect, session
+from flask import Flask, render_template, url_for, request, redirect
+from models.models import MemberContent
+from models.database import db_session
+from datetime import datetime
+
 
 # Flask object の生成
 app = Flask(__name__)
-app.secret_key = 'hogehoge'
+
+
+# リクエストの最後に、セッションの後片付けをする必要がある
+@app.teardown_request
+def shutdown_session(exception=None):
+    db_session.remove()
+
 
 # "/"へアクセス時、"/get"へリダイレクト
 @app.route("/")
-def index():
+def top():
     return redirect(url_for('get'))
 
-# get処理の入力フォームを表示
-@app.route("/get", methods=["GET", "POST"])
+
+@app.route("/get")
 def get():
     '''
     登録ページ
     '''
-    if request.method == "GET":
-        return render_template('get.html')
-    else:
-        session['name'] = request.form.get('name')
-        session['email'] = request.form.get('email')
-        session['birthday'] = request.form.get('birthday')
-        return redirect(url_for('confilm'))
-#        return redirect(url_for('confilm'), name=name, email=email, birthday=birthday)
+    return render_template('get.html')
 
-# getでの入力情報を確認
-@app.route("/confilm", methods=["GET", "POST"])
+
+@app.route("/confilm", methods=["POST"])
 def confilm():
     '''
     確認ページ
     '''
-    if request.method == "GET":
-        return render_template('confilm.html', name=session['name'], email=session['email'], birthday=session['birthday'])
-    else:
-#        name = request.form.get('name')
-#        email = request.form.get('email')
-#        birthday = request.form.get('birthday')
-#        return render_template('confilm.html', name=name, email=email, birthday=birthday)
-#        return render_template('confilm.html')
-        return redirect(url_for('complete'))
+    name = request.form.get('name')
+    email = request.form.get('email')
+    birthday = request.form.get('birthday')
+    return render_template('confilm.html', name=name, email=email, birthday=birthday)
 
 
-@app.route("/complete")
+@app.route("/complete", methods=["POST"])
 def complete():
     '''
     完了ページ
     '''
+    name = request.form.get('name')
+    email = request.form.get('email')
+    birthday = datetime.strptime(request.form.get('birthday'), '%Y-%m-%d')
+    content = MemberContent(name, email, birthday)
+    db_session.add(content)
+    db_session.commit()
     return render_template('complete.html')
+    
+
+@app.route("/index")
+def index():
+    '''
+    DB閲覧ページ（debug）
+    '''
+    all_member = MemberContent.query.all()
+    return render_template("index.html", dblist=all_member)
 
 
 # debugありで起動
