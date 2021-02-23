@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
     <h1>新規会員登録</h1>
-    <form  action="{{ url_for('get') }}" method="post">
+    <form action="{{ url_for('confilm') }}" method="post">
         <label>氏名：
             <input type="text" name="name" placeholder="山田太郎">
         </label>
@@ -11,8 +11,6 @@
         <label>生年月日：
             <input type="date" name="birthday">
         </label>
-        <input type="radio" name="gender" value="男" {{checked1}}>男
-        <input type="radio" name="gender" value="女" {{checked2}}>女
         <input type="submit" value="送信">
         <input type="reset" value="リセット">
     </form>
