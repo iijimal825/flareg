@@ -1,0 +1,143 @@
+
+body {
+	background-color:#f5f5f5;
+    font-family: 'Noto Sans JP', 'RocknRoll One', sans-serif;
+    color: #364f6b;
+    font-size: 16pt;
+}
+
+.header {
+    background-color: #3fc1c9;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding: 5px 5px 5px 30px;
+    color: #364f6b;
+    text-decoration: none;
+}
+
+.header h2, .header h2 a, .header h2 a:visited, .header h2 a:active {
+    font-size: 30pt;
+    margin-right: 20px;
+    font-family: 'Libre Franklin', sans-serif;
+    color: #e04b77;
+}
+
+
+.header p {
+    font-size: 12pt;
+    font-family: 'Libre Franklin', sans-serif;
+}
+
+.main {
+    padding-left: 30px;
+    padding-right: 30px;
+    margin-top: 20px;
+    margin-bottom: 70px;
+}
+
+.main h1, .main h1:visited {
+    color: #364f6b;
+}
+
+.inputform {
+	position: relative;
+	width: 80%;
+	margin: 40px 3%;
+}
+.inputform input {
+	padding: 0.3em;
+    color: #364f6b;
+	border: 1px solid #364f6b;
+	border-radius: 4px;
+}
+.box input:focus {
+	border: 1px solid #e04b77;
+	outline: none;
+    color: #364f6b;
+	box-shadow: 0 0 5px 1px #b4345b;
+}
+
+.confilmform {
+	position: relative;
+	width: 80%;
+	margin: 40px 3%;
+}
+.confilmform input {
+	padding: 0.3em;
+	color: #364f6b;;
+	border: 1px solid #364f6b;
+	border-radius: 4px;
+}
+
+
+input[type="submit"] {
+    display: inline-block;
+    font-size: 15pt;
+    font-weight: bold;
+    padding: 5px 15px;
+    text-decoration: none;
+    background: #e04b77;
+    color: #f5f5f5;
+    border: 1px solid #e04b77;
+    border-radius: 5px;
+}
+
+input[type="submit"]:hover {
+    transition: all .2s linear;
+    background: #f5f5f5;
+    color: #e04b77;
+}
+
+input[type="reset"] {
+    display: inline-block;
+    font-size: 15pt;
+    font-weight: bold;
+    padding: 5px 15px;
+    text-decoration: none;
+    background: #364f6b;
+    color: #f5f5f5;
+    border: 1px solid #364f6b;
+    border-radius: 5px;
+}
+
+input[type="reset"]:hover {
+    transition: all .2s linear;
+    background: #f5f5f5;
+    color: #364f6b;
+}
+
+.btn_return {
+    display: inline-block;
+    font-size: 15pt;
+    font-weight: bold;
+    padding: 5px 15px;
+    text-decoration: none;
+    background: #364f6b;
+    color: #f5f5f5;
+    border: 1px solid #364f6b;
+    border-radius: 5px;
+}
+  
+.btn_return:hover {
+    transition: all .2s linear;
+    background: #f5f5f5;
+    color: #364f6b;
+}  
+
+
+/*
+.list table {
+    border-collapse: collapse;
+    border: 3px solid #ccc;
+    line-height: 1.5;
+}
+
+.list table th {
+    width: 150px;
+    padding: 10px;
+    font-weight: bold;
+    vertical-align: top;
+    background: #364f6b;
+    color: #f5f5f5;
+}
+*/

@@ -1,15 +1,22 @@
+<!-- templates/base.html -->
 <!DOCTYPE html>
-<html>
+<html lang="ja">
     <head>
-        <title>会員登録アプリ</title>
+        <title>flareg - 会員登録アプリ</title>
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/flareg.css') }}">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat&family=RocknRoll+One&display=swap">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@1,900&display=swap">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@500&display=swap">
     </head>
-       <body>
-            <div class="page-header">
-                    <h2 style="display:inline;"><a href="/">会員登録フォーム</a></h2>
-                    <p style="display:inline;">Member registration website using flask, which is a python module.</p>
-            </div>
-            {% block content %}
-            {% endblock %}
-            </div>
-       </body>
+    <body>
+        <div class="header">
+            <h2 style="display:inline;"><a href="/">flareg</a></h2>
+            <p style="display:inline;">Member registration website using flask, which is a python module.</p>
+        </div>
+        {% block content %}
+        {% endblock %}
+    </body>
 </html>
