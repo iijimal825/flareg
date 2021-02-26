@@ -1,8 +1,16 @@
 {% extends "base.html" %}
 {% block content %}
-    <div class="main">
-        <h2>登録完了しました</h2>
-        <a class="btn_return" href="/get">戻る</a>
+    <div class="main">     
+        {% if status == "user_notunique" %}
+            <p>登録に失敗しました：入力された氏名は、既に使用されています</p>
+        {% elif status == "email_notunique" %}
+            <p>登録に失敗しました：入力されたメールアドレスは、既に使用されています</p>
+        {% elif status == "dbcommit_failed" %}
+            <p>登録に失敗しました</p>
+        {% elif status == "success" %}
+            <p>登録完了しました</p>
+        {% endif %}
+        <a class="btn_return" href="/get">登録ページへ戻る</a>
         </form>
     </div>
 {% endblock %}

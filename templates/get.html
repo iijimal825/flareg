@@ -2,18 +2,18 @@
 {% block content %}
     <div class="main">
         <h1>新規会員登録</h1>
-        <form action="{{ url_for('confilm') }}" method="post">
+        <form action="{{ url_for('get') }}" method="post">
             <div class="inputform">
                 <label class="box">氏名　
-                    <input type="text" name="name" placeholder="氏名">
+                    <input type="text" name="name" placeholder="氏名" size="100" required>
                 </label>
                 <br>
                 <label class="box">メールアドレス　
-                    <input type="email" name="email" placeholder="E-mail">
+                    <input type="email" name="email" placeholder="E-mail" size="150" required>
                 </label>
                 <br>
                 <label class="box">生年月日　
-                    <input type="date" name="birthday">
+                    <input type="date" name="birthday" max="{{ today }}" required>
                 </label>
             </div>
             <input type="submit" value="送信">

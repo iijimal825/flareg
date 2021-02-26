@@ -3,19 +3,11 @@
     <div class="main">
         <h1>登録情報確認</h1>
         <h2>下記内容でよろしいでしょうか？</h2>
-        <form action="{{ url_for('complete') }}" method="post">
+        <form action="{{ url_for('confilm') }}" method="post">
             <div class="confilmform">
-                <label class="box">氏名　
-                    <input  readonly="readonly" type="text" name="name" value={{ name }}>
-                </label>
-                <br>
-                <label class="box">メールアドレス　
-                    <input readonly="readonly" type="email" name="email" value={{ email }}>
-                </label>
-                <br>
-                <label class="box">生年月日　
-                    <input readonly="readonly" type="date" name="birthday" value={{ birthday }}>
-                </label>
+                <label class="box">氏名: {{ session.name }}</label><br>
+                <label class="box">メールアドレス: {{ session.email }}</label><br>
+                <label class="box">生年月日: {{ session.birthday }}</label><br>
             </div>
             <input type="submit" value="登録する">
             <a class="btn_return" href="/get">戻る</a>

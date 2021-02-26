@@ -56,12 +56,21 @@ body {
     color: #364f6b;
 	box-shadow: 0 0 5px 1px #b4345b;
 }
+	
+input[type="text"]{
+    width: 300px;
+}
+
+input[type="email"] {
+    width: 450px;
+}
 
 .confilmform {
 	position: relative;
 	width: 80%;
 	margin: 40px 3%;
 }
+
 .confilmform input {
 	padding: 0.3em;
 	color: #364f6b;;

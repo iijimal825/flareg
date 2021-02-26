@@ -6,6 +6,8 @@ from datetime import datetime
 
 class MemberContent(Base):
     __tablename__ = 'membercontent'
+    # 複合ユニーク制約
+    #__table_args__ = (UniqueConstraint('name','email'),{})
     id = Column(Integer, primary_key=True)
     name = Column(String(100), unique=True)
     email = Column(String(120), unique=True)

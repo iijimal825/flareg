@@ -12,25 +12,9 @@
 
  # usage
 
- ### setup db
- 
- Python対話コンソールを起動して、データベースを作成する。（初回のみ）
  ```sh
- $ cd ./flareg
- $ python
- ```
-
- ```python
- >>> from models.database import init_db
- >>> init_db()
- ```
- 
- ### run app
-
- Python対話コンソールから退出し、`app.py`を実行する。
-
- ```sh
- $ python app.py
+ $ export FLASK_APP=app.py
+ $ flask run
  ```
 
  起動したら、http://localhost:5000/ へブラウザからアクセスする。
