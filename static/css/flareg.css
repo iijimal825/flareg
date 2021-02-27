@@ -7,25 +7,23 @@ body {
 }
 
 .header {
-    background-color: #3fc1c9;
+    background-color: #8be3e7;
     margin-top: 0px;
     margin-bottom: 0px;
     padding: 5px 5px 5px 30px;
     color: #364f6b;
     text-decoration: none;
+    font-family: 'Libre Franklin', sans-serif;
 }
 
 .header h2, .header h2 a, .header h2 a:visited, .header h2 a:active {
     font-size: 30pt;
     margin-right: 20px;
-    font-family: 'Libre Franklin', sans-serif;
     color: #e04b77;
 }
 
-
 .header p {
-    font-size: 12pt;
-    font-family: 'Libre Franklin', sans-serif;
+    font-size: 12pt;s
 }
 
 .main {
@@ -39,52 +37,41 @@ body {
     color: #364f6b;
 }
 
-.inputform {
-	position: relative;
-	width: 80%;
-	margin: 40px 3%;
+.label-danger {
+    background-color: #d9534f;
+    font-size: 9pt;
 }
-.inputform input {
-	padding: 0.3em;
+
+p {
+    font-size: 20pt;
+}
+
+input {
     color: #364f6b;
-	border: 1px solid #364f6b;
+	border: 1px solid #ccc;
 	border-radius: 4px;
+    display: block;
+    font-weight: bold;
+    padding: 5px 15px;
+    text-decoration: none;
+    width: 450px;
 }
-.box input:focus {
+
+input:focus {
 	border: 1px solid #e04b77;
 	outline: none;
     color: #364f6b;
 	box-shadow: 0 0 5px 1px #b4345b;
 }
-	
-input[type="text"]{
-    width: 300px;
-}
 
-input[type="email"] {
-    width: 450px;
+.button {
+    display: inline-block;
+    border-radius: 5%;
+    text-align: center;
+    width: auto;
 }
-
-.confilmform {
-	position: relative;
-	width: 80%;
-	margin: 40px 3%;
-}
-
-.confilmform input {
-	padding: 0.3em;
-	color: #364f6b;;
-	border: 1px solid #364f6b;
-	border-radius: 4px;
-}
-
 
 input[type="submit"] {
-    display: inline-block;
-    font-size: 15pt;
-    font-weight: bold;
-    padding: 5px 15px;
-    text-decoration: none;
     background: #e04b77;
     color: #f5f5f5;
     border: 1px solid #e04b77;
@@ -98,11 +85,6 @@ input[type="submit"]:hover {
 }
 
 input[type="reset"] {
-    display: inline-block;
-    font-size: 15pt;
-    font-weight: bold;
-    padding: 5px 15px;
-    text-decoration: none;
     background: #364f6b;
     color: #f5f5f5;
     border: 1px solid #364f6b;
@@ -117,7 +99,6 @@ input[type="reset"]:hover {
 
 .btn_return {
     display: inline-block;
-    font-size: 15pt;
     font-weight: bold;
     padding: 5px 15px;
     text-decoration: none;
@@ -131,22 +112,5 @@ input[type="reset"]:hover {
     transition: all .2s linear;
     background: #f5f5f5;
     color: #364f6b;
+    text-decoration: none;
 }  
-
-
-/*
-.list table {
-    border-collapse: collapse;
-    border: 3px solid #ccc;
-    line-height: 1.5;
-}
-
-.list table th {
-    width: 150px;
-    padding: 10px;
-    font-weight: bold;
-    vertical-align: top;
-    background: #364f6b;
-    color: #f5f5f5;
-}
-*/

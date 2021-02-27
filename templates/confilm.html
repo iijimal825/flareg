@@ -2,14 +2,21 @@
 {% block content %}
     <div class="main">
         <h1>登録情報確認</h1>
-        <h2>下記内容でよろしいでしょうか？</h2>
+        <h3>下記の内容でよろしいでしょうか？</h3>
         <form action="{{ url_for('confilm') }}" method="post">
-            <div class="confilmform">
-                <label class="box">氏名: {{ session.name }}</label><br>
-                <label class="box">メールアドレス: {{ session.email }}</label><br>
-                <label class="box">生年月日: {{ session.birthday }}</label><br>
+            <div class="form-group">
+                <label>氏名</label>
+                <p>{{ session.name }}</p>
             </div>
-            <input type="submit" value="登録する">
+            <div class="form-group">
+                <label>メールアドレス</label>
+                <p>{{ session.email }}</p>
+            </div>
+            <div class="form-group">
+                <label>生年月日</label>
+                <p>{{ session.birthday }}</p>
+            </div>
+            <input type="submit" value="登録" class="button">
             <a class="btn_return" href="/get">戻る</a>
         </form>
     </div>
