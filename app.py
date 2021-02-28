@@ -12,12 +12,13 @@ app.secret_key = b'\x88{{\x81-@\xbb\x072\x8f#\xb6\xf1*\xd5\xb7'
 # リクエストの最後に、セッションの後片付けをする必要がある
 @app.teardown_request
 def shutdown_session(exception=None):
+    print("teardown_request")
     db_session.remove()
 
 
 # "/"へアクセス時、"/get"へリダイレクト
 @app.route("/")
-def top():
+def top():          
     return redirect(url_for('get'))
 
 
@@ -82,6 +83,7 @@ def index():
     '''
     DB閲覧ページ（debug）
     '''
+    # Seesionを使ってるように見えないが内部的に使っている
     all_member = MemberContent.query.all()
     return render_template("index.html", dblist=all_member)
 

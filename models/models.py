@@ -4,6 +4,7 @@ from models.database import Base
 from datetime import datetime
 
 
+# テーブルは、Baseを継承したクラスで定義
 class MemberContent(Base):
     __tablename__ = 'membercontent'
     # 複合ユニーク制約
