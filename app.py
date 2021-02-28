@@ -12,7 +12,6 @@ app.secret_key = b'\x88{{\x81-@\xbb\x072\x8f#\xb6\xf1*\xd5\xb7'
 # リクエストの最後に、セッションの後片付けをする必要がある
 @app.teardown_request
 def shutdown_session(exception=None):
-    print("teardown_request")
     db_session.remove()
 
 
