@@ -9,7 +9,6 @@
     - Flask 1.1.2
     - Jinja2 2.11.3
     - SQLAlchemy 1.3.23
-    - Flask-Migrate 2.7.0
 
  # usage
  
