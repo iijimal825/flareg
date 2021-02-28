@@ -8,13 +8,14 @@
  - language: Python 3.7.9
     - Flask 1.1.2
     - Jinja2 2.11.3
-    - flask-sqlalchemy 2.4.4
+    - SQLAlchemy 1.3.23
+    - Flask-Migrate 2.7.0
 
  # usage
-
- ### setup db
  
- Python対話コンソールを起動して、データベースを作成する。（初回のみ）
+ ### setup db
+
+ Python対話コンソールを起動して、データベースファイルを作成する。（初回のみ）
  ```sh
  $ cd ./flareg
  $ python
@@ -24,13 +25,12 @@
  >>> from models.database import init_db
  >>> init_db()
  ```
- 
+
  ### run app
 
- Python対話コンソールから退出し、`app.py`を実行する。
-
  ```sh
- $ python app.py
+ $ export FLASK_APP="app.py"
+ $ flask run
  ```
 
  起動したら、http://localhost:5000/ へブラウザからアクセスする。

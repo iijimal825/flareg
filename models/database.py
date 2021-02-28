@@ -4,6 +4,7 @@ from sqlalchemy.orm import scoped_session, sessionmaker
 from sqlalchemy.ext.declarative import declarative_base
 import os
 
+
 # dbファイルパスを定義
 database_file = os.path.join(os.path.abspath(os.path.dirname(__file__)), "flareg.db")
 # SQLiteを利用してDBを構築
@@ -12,8 +13,12 @@ engine = create_engine("sqlite:///" + database_file, convert_unicode=True)
 db_session = scoped_session(sessionmaker(autocommit=False,autoflush=False,bind=engine))
 # Baseオブジェクトを生成して、DBの情報を入れる
 Base = declarative_base()
+# 予めテーブル定義の継承元クラスにqueryプロパティを仕込んでおく
 Base.query = db_session.query_property()
+
 
 def init_db():
     import models.models
-    Base.metadata.create_all(bind=engine)
+    # テーブルの作成
+    # Baseを継承しているテーブル群が、一括してCREATE TABLEされる
+    Base.metadata.create_all(bind=engine, checkfirst=False)

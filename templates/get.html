@@ -2,22 +2,21 @@
 {% block content %}
     <div class="main">
         <h1>新規会員登録</h1>
-        <form action="{{ url_for('confilm') }}" method="post">
-            <div class="inputform">
-                <label class="box">氏名　
-                    <input type="text" name="name" placeholder="氏名">
-                </label>
-                <br>
-                <label class="box">メールアドレス　
-                    <input type="email" name="email" placeholder="E-mail">
-                </label>
-                <br>
-                <label class="box">生年月日　
-                    <input type="date" name="birthday">
-                </label>
+        <form action="{{ url_for('get') }}" method="post">
+            <div class="form-group">
+                <label>氏名 <span class="label label-danger">必須</span></label>
+                <input type="text" name="name" size="100" required>
             </div>
-            <input type="submit" value="送信">
-            <input type="reset" value="リセット">
+            <div class="form-group">
+                <label>メールアドレス <span class="label label-danger">必須</span></label>
+                <input type="email" name="email" size="257" pattern="^[a-zA-Z0-9_+]+(.[a-zA-Z0-9_+-]+)*@([a-zA-Z0-9][a-zA-Z0-9-]*[a-zA-Z0-9]*\.)+[a-zA-Z]{2,}$" reequired title="不正な形式です">
+            </div>
+            <div class="form-group">
+                <label>生年月日 <span class="label label-danger">必須</span></label>
+                <input type="date" name="birthday" max="{{ today }}" required>
+            </div>
+            <input type="submit" value="登録" class="button">
+            <input type="reset" value="リセット" class="button">
         </form>
     </dev>
 {% endblock %}
